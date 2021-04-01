@@ -27,8 +27,7 @@ import java.util.List;
 
 @SuppressWarnings("restriction")
 public class MainGui extends Application {
-
-    private final static String title = "ICSS Tool September 2020, version 1";
+    private final static String title = "ICSS Tool February 2021, version 1, by Robin van der Vliet";
     //Example files (for menu)
     private final static List<String> examples = Arrays.asList("level0.icss", "level1.icss", "level2.icss", "level3.icss", "level4.icss");
 
