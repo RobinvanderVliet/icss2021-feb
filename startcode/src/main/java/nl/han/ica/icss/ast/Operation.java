@@ -1,5 +1,7 @@
 package nl.han.ica.icss.ast;
 
+import nl.han.ica.icss.ast.types.ExpressionType;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
@@ -37,4 +39,17 @@ public abstract class Operation extends Expression {
 
         return this;
     }
+
+    /**
+     * Execute the operation.
+     * @return The result of the calculation.
+     */
+    public abstract Literal calculate();
+
+    /**
+     * Validate the operation with specific types.
+     * @param types The types of the operands.
+     * @return The error message if something went wrong, otherwise null.
+     */
+    public abstract String validate(ExpressionType[] types);
 }
