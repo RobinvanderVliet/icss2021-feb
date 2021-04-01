@@ -22,8 +22,8 @@ import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.List;
 
-//We use this google library, because it makes life so much easier when
-//reading the examples icss files as packaged resource
+//We use this Google library, because it makes life so much easier when
+//reading the examples ICSS files as packaged resource.
 
 @SuppressWarnings("restriction")
 public class MainGui extends Application {
@@ -46,7 +46,10 @@ public class MainGui extends Application {
     //Model
     private Pipeline pipeline;
 
-
+    /**
+     * The main entry point for the application.
+     * @param stage The primary stage for the application onto which the application scene is set.
+     */
     @Override
     public void start(Stage stage) {
         //Setup pipeline
@@ -185,11 +188,17 @@ public class MainGui extends Application {
         stage.show();
     }
 
+    /**
+     * Clear the feedback pane and the errors.
+     */
     private void clear() {
         feedbackPane.clear();
         pipeline.clearErrors();
     }
 
+    /**
+     * Parse the input.
+     */
     private void parse() {
         clear();
         feedbackPane.addLine("Parsing...");
@@ -204,6 +213,9 @@ public class MainGui extends Application {
         updateToolbar();
     }
 
+    /**
+     * Check the input.
+     */
     private void check() {
         clear();
         feedbackPane.addLine("Checking...");
@@ -218,6 +230,9 @@ public class MainGui extends Application {
         updateToolbar();
     }
 
+    /**
+     * Transform the input.
+     */
     private void transform() {
        clear();
        feedbackPane.addLine("Applying transformations...");
@@ -229,6 +244,9 @@ public class MainGui extends Application {
        updateToolbar();
     }
 
+    /**
+     * Generate the output.
+     */
     private void generate() {
         clear();
         feedbackPane.addLine("Generating output...");
@@ -237,6 +255,9 @@ public class MainGui extends Application {
         updateToolbar();
     }
 
+    /**
+     * Update the buttons of the toolbar.
+     */
     private void updateToolbar() {
         //Quick and ugly way...
         checkButton.setDisable(true);
