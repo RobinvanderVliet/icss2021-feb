@@ -29,6 +29,20 @@ public class ColorLiteral extends Literal {
 
         this.value = value;
     }
+
+    /**
+     * Create an instance.
+     * @param r The red value as a decimal between 0 and 255.
+     * @param g The green value as a decimal between 0 and 255.
+     * @param b The blue value as a decimal between 0 and 255.
+     */
+    public ColorLiteral(int r, int g, int b) {
+        this("#" +
+                String.format("%02X", Math.max(0, Math.min(255, r))) +
+                String.format("%02X", Math.max(0, Math.min(255, g))) +
+                String.format("%02X", Math.max(0, Math.min(255, b))));
+    }
+
     @Override
     public String getNodeLabel() {
         return "Color literal (" + value + ")";
