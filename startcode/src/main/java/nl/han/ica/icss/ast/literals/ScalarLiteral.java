@@ -6,9 +6,15 @@ public class ScalarLiteral extends NumberLiteral {
     public ScalarLiteral(int value) {
         this.value = value;
     }
+
     public ScalarLiteral(String text) {
-        this.value = Integer.parseInt(text);
+        try {
+            this.value = Integer.parseInt(text);
+        } catch (NumberFormatException ignored) {
+            this.setError("This scalar value does not contain a parsable integer.");
+        }
     }
+
     @Override
     public String getNodeLabel() {
         return "Scalar literal (" + value + ")";

@@ -6,9 +6,15 @@ public class PixelLiteral extends NumberLiteral {
     public PixelLiteral(int value) {
         this.value = value;
     }
+
     public PixelLiteral(String text) {
-        this.value = Integer.parseInt(text.substring(0, text.length() - 2));
+        try {
+            this.value = Integer.parseInt(text.substring(0, text.length() - 2));
+        } catch (NumberFormatException ignored) {
+            this.setError("This pixel value does not contain a parsable integer.");
+        }
     }
+
     @Override
     public String getNodeLabel() {
         return "Pixel literal (" + value + ")";

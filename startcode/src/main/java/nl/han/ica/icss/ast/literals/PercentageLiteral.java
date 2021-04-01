@@ -6,9 +6,15 @@ public class PercentageLiteral extends NumberLiteral {
     public PercentageLiteral(int value) {
         this.value = value;
     }
+
     public PercentageLiteral(String text) {
-        this.value = Integer.parseInt(text.substring(0, text.length() - 1));
+        try {
+            this.value = Integer.parseInt(text.substring(0, text.length() - 1));
+        } catch (NumberFormatException ignored) {
+            this.setError("This percentage value does not contain a parsable integer.");
+        }
     }
+
     @Override
     public String getNodeLabel() {
         return "Percentage literal (" + value + ")";
