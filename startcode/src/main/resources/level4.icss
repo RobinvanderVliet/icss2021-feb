@@ -1,0 +1,24 @@
+Number := 16;
+Testing := -Number * 2;
+Size := 25%;
+InvertColor := Testing < -10;
+Color := rgb(0, Number * 2 + 2, 8 + 8 * Number);
+
+body {
+	color: Color;
+	background-color: InvertColor ? !Color : #fff; //invert the color
+
+	Number := 99999; //out of scope for if clause
+}
+
+#element {
+	if [Number >= 8 && Number <= 32] { //if 16 between 8 and 32
+		height: Size * 2;
+		width: Size * 3;
+	} else {
+		height: 100%;
+		width: 100%;
+	}
+
+	color: hsv(random(200, 250), random(50, 100), random(50, 100)); //random blueish color
+}
