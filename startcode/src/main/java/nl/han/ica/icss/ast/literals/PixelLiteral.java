@@ -1,12 +1,8 @@
 package nl.han.ica.icss.ast.literals;
 
-import nl.han.ica.icss.ast.Literal;
-
 import java.util.Objects;
 
-public class PixelLiteral extends Literal {
-    public int value;
-
+public class PixelLiteral extends NumberLiteral {
     public PixelLiteral(int value) {
         this.value = value;
     }
