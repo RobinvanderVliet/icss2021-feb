@@ -24,6 +24,7 @@ public class ClassSelector extends Selector {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         ClassSelector that = (ClassSelector) o;
         return Objects.equals(cls, that.cls);
     }

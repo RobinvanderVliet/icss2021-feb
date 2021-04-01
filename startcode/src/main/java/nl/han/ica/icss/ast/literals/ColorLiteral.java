@@ -48,7 +48,6 @@ public class ColorLiteral extends Literal {
         return "Color literal (" + value + ")";
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,9 +55,9 @@ public class ColorLiteral extends Literal {
         ColorLiteral that = (ColorLiteral) o;
         return Objects.equals(value, that.value);
     }
+
     @Override
     public int hashCode() {
-
         return Objects.hash(value);
     }
 }

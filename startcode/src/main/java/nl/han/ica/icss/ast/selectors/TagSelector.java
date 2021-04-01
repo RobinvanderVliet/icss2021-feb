@@ -11,9 +11,11 @@ public class TagSelector extends Selector {
         this.tag = tag;
     }
 
+    @Override
     public String getNodeLabel() {
         return "TagSelector " + tag;
     }
+
     public String toString() {
         return tag;
     }
@@ -29,7 +31,6 @@ public class TagSelector extends Selector {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(tag);
     }
 }
